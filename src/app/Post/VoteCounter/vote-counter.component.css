@@ -1,0 +1,23 @@
+.counter-wrapper {
+  display: inline-block;
+  user-select: none;
+}
+.number-of-votes {
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  padding: 0;
+  text-align: center;
+  user-select: none;
+}
+.selected {
+  color: rgb(80, 80, 80) !important;
+}
+.vote {
+  color: rgb(200, 200, 200);
+}
+.vote:hover {
+  color: rgb(180, 180, 180);
+  cursor: pointer;
+}

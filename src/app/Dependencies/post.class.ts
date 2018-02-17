@@ -3,15 +3,12 @@ export class Post {
   description: string;
   numberOfUp = 0;
   numberOfDown = 0;
-  constructor (titleValue, descriptionValue) {
+  constructor (titleValue, descriptionValue, initialUp, initialDown) {
     this.title = titleValue;
     this.description = descriptionValue;
+    this.numberOfUp = initialUp;
+    this.numberOfDown = initialDown;
   }
-  voteDown (): void {
-    this.numberOfDown--;
-  }
-  voteUp (): void {
-    this.numberOfUp++;
-  }
+
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Post } from './Dependencies/app.post.class'
+import { Post } from './Dependencies/post.class'
 
 @Component({
   selector: 'app-root',
@@ -17,10 +17,10 @@ export class AppComponent {
   }
   generateInitialPosts (): Array<Post> { // For demo purposes
     var posts = [];
-    posts.push(new Post("Title 1", "Description"));
-    posts.push(new Post("Title 2", "Description"));
-    posts.push(new Post("Title 3", "Description"));
-    posts.push(new Post("Title 4", "Description"));
+    posts.push(new Post("Title 1", "Description", 5, 1));
+    posts.push(new Post("Title 2", "Description", 1, 4));
+    posts.push(new Post("Title 3", "Description", 100, 1));
+    posts.push(new Post("Title 4", "Description", 500, 30));
 
     return posts;
   }

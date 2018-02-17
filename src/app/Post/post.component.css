@@ -1,0 +1,16 @@
+.expand-button {
+  user-select: none;
+}
+.expand-button:hover {
+  cursor: pointer;
+}
+.expand-button:hover, .expand-button:hover .icon {
+  color: rgb(180, 180, 180);
+}
+.post-content {
+  display: inline-block;
+}
+.post-wrapper {
+  border-bottom: 1px solid rgb(200, 200, 200);
+  border-top: 1px solid rgb(200, 200, 200);
+}
