@@ -1,5 +1,5 @@
 <div class = "counter-wrapper">
-  <div [ngClass]="{'selected': userVote == 1}" class="vote" (click) = "voteUp()"><i class = "fas fa-arrow-up"></i></div>
+  <div [ngClass]="{'selected': userVote == 1}" class="vote" (click) = "voteUp()"><i class = "fa fa-arrow-up"></i></div>
   <p class = "number-of-votes">{{upVotes - downVotes}}</p>
-  <div [ngClass]="{'selected': userVote == -1}" class="vote" (click) = "voteDown()"><i class = "fas fa-arrow-down"></i></div>
+  <div [ngClass]="{'selected': userVote == -1}" class="vote" (click) = "voteDown()"><i class = "fa fa-arrow-down"></i></div>
 </div>

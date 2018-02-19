@@ -1,3 +1,4 @@
+
 .expand-button {
   user-select: none;
 }
@@ -9,8 +10,18 @@
 }
 .post-content {
   display: inline-block;
+  width: 80%; /*Leave room for vote counter*/
 }
 .post-wrapper {
   border-bottom: 1px solid rgb(200, 200, 200);
   border-top: 1px solid rgb(200, 200, 200);
+  width: 100%;
+
+}
+.text-limit {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
 }

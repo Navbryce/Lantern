@@ -2,9 +2,14 @@
   <vote-counter [upvotes] = "post.numberOfUp" [downvotes] = "post.numberOfDown"></vote-counter>
   <div class="post-content">
     <h3>{{post.title}}</h3>
-    <p>{{post.description}}</p>
+    <div *ngIf="!expanded">
+      <p class="text-limit">{{post.description}}</p>
+    </div>
+    <div *ngIf="expanded" class="full-post">
+      <p>{{post.description}}</p>
+    </div>
   </div>
   <div class="expand-button" (click)="toggleExpand()">
-    <i class="fas fa-plus icon"></i><a> {{this.expandText}}</a>
+    <i class="fa" [ngClass]="expanded ? 'fa-minus' : 'fa-plus'"></i><a> {{expandText}}</a>
   </div>
 </div>
