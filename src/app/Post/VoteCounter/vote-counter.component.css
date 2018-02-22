@@ -1,8 +1,8 @@
 .counter-wrapper {
   display: inline-block;
+  padding-top: 5px;
   user-select: none;
   vertical-align: top;
-  padding-top: 5px;
 }
 .number-of-votes {
   margin-bottom: 0;
@@ -18,6 +18,10 @@
 }
 .vote {
   color: rgb(200, 200, 200);
+  text-align: center;
+}
+.vote > i {
+  display: inline-block;
 }
 .vote:hover {
   color: rgb(180, 180, 180);

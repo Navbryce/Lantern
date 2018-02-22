@@ -1,0 +1,43 @@
+.nav-logo-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+
+}
+.nav-logo-wrapper > img {
+  object-fit: cover;
+  width: 50px;
+}
+.nav-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+.nav-title > h1 {
+  display: inline-block;
+  margin: 5px;
+}
+.nav-wrapper {
+  width: 100vw;
+}
+.tab {
+  border-left: 1px solid rgb(200, 200, 200);
+  border-right: 1px solid rgb(200, 200, 200);
+  border-top: 1px solid rgb(200, 200, 200);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px;
+}
+.tab:hover {
+  cursor: pointer;
+}
+.tab-selected {
+  background-color: rgb(200, 200, 200);
+  border-bottom: none;
+}
+.tabs {
+  display: inline-block;
+  margin-left: 5%;
+  user-select: none;
+  vertical-align: bottom;
+}

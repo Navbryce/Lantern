@@ -1,3 +1,5 @@
-<div *ngFor = "let postObject of posts" >
-<post-element [post] = "postObject"></post-element>
+<navbar [selectedTabObject]="selectedTab"></navbar>
+<div class="tabs">
+  <rec-tab [hidden]="!selectedTab.tabNumber==0"></rec-tab>
+  <all-tab [hidden]="!selectedTab.tabNumber==1"></all-tab>
 </div>

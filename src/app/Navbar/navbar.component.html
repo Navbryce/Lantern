@@ -1,0 +1,18 @@
+<div class="nav-wrapper">
+  <div>
+    <div class="nav-logo-wrapper">
+      <img src="/assets/images/logos/lantern.png">
+    </div>
+    <div class="nav-title">
+      <h1>Lantern</h1>
+    </div>
+    <div class="tabs">
+      <div class="tab" (click)="selectTab(0)" [ngClass]="{'tab-selected': selectedTab==0}">
+        <a>Recommended</a>
+      </div>
+      <div class="tab" (click)="selectTab(1)" [ngClass]="{'tab-selected': selectedTab==1}">
+        <a>All</a>
+      </div>
+    </div>
+  </div>
+</div>
