@@ -1,5 +1,5 @@
 <div class="nav-wrapper">
-  <div>
+  <div class="nav">
     <div class="nav-logo-wrapper">
       <img src="/assets/images/logos/lantern.png">
     </div>
@@ -12,6 +12,18 @@
       </div>
       <div class="tab" (click)="selectTab(1)" [ngClass]="{'tab-selected': selectedTab==1}">
         <a>All</a>
+      </div>
+      <div class="tab" (click)="selectTab(2)" [ngClass]="{'tab-selected': selectedTab==2}">
+        <a>Profile Settings</a>
+      </div>
+    </div>
+    <div class="profile-wrapper drop-down">
+      <div class="profile drop-btn">
+        <i class="fa fa-user fa-2x profile-element"></i>
+        <p class="profile-element">{{profile.userName}}</p>
+      </div>
+      <div class="drop-content">
+        <p>Logout</p>
       </div>
     </div>
   </div>

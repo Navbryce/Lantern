@@ -1,7 +1,19 @@
+.drop-content {
+  background-color: #f1f1f1;
+  display: none;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+.drop-down:hover  .drop-content {
+  display: block;
+}
+.nav {
+  position: relative;
+}
 .nav-logo-wrapper {
   display: inline-block;
   vertical-align: middle;
-
 }
 .nav-logo-wrapper > img {
   object-fit: cover;
@@ -17,6 +29,20 @@
 }
 .nav-wrapper {
   width: 100vw;
+}
+.profile {
+  display: inline-block;
+}
+.profile-element {
+  display: inline-block;
+  margin: 0;
+}
+.profile-wrapper {
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 10%;
+  top: 25%;
 }
 .tab {
   border-left: 1px solid rgb(200, 200, 200);
