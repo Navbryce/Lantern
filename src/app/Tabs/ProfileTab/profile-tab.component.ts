@@ -9,10 +9,21 @@ import { Profile } from '../../Dependencies/profile.class'
 })
 export class ProfileTabComponent {
   @Input() profile: Profile;
+  voteHistory: Array<Post>; // The vote history array in profile is an array of javascript objects with a "post" property and "vote" property
 
   constructor () {
   }
   ngOnInit() {
+    this.profile.voteHistoryObservable.subscribe((voteHistory) => {
+      this.getVoteHistoryPosts(voteHistory);
+    });
+  }
+  getVoteHistoryPosts (newVoteHistory: any): void { // Required rather than just sending the profile.voteHistory variable to the "vote history" tab because profile.voteHistory is a javascript object where each property is has two properties (an ID and post)
+    var posts = [];
+    Object.keys(newVoteHistory).forEach(function(key,index) {
+      posts.push(newVoteHistory[key].post);
+    });
+    this.voteHistory = posts;
   }
 
 }

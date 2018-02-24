@@ -29,6 +29,7 @@ export class PostComponent {
   }
 
   userChangeVote (newVote: number): void {
+    this.post.changeUserVote(newVote);
     this.profile.voteOnPost(this.post, newVote);
   }
 }

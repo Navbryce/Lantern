@@ -7,7 +7,7 @@ import { Profile } from '../../Dependencies/profile.class'
   templateUrl: './all-tab.component.html',
   styleUrls: ['./all-tab.component.css']
 })
-export class AllTabComponent {
+export class AllTabComponent { // Probably want to make this extend general tab
   @Input() profile: Profile;
 
   posts: Array<Post>;
@@ -20,7 +20,7 @@ export class AllTabComponent {
   }
   generateInitialPosts (): Array<Post> { // For demo purposes
     var posts = [];
-    posts.push(new Post("Title 1", "At the top", 5000, 122));
+    posts.push(new Post("Title 1", "At the top", 5000, 122, 0));
 
 
     return posts;

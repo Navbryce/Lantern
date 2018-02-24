@@ -1,5 +1,5 @@
 <div class="post-wrapper">
-  <vote-counter [upvotes] = "post.numberOfUp" [downvotes] = "post.numberOfDown" (voteSignal)="userChangeVote($event)"></vote-counter>
+  <vote-counter [votes] = "post.votes" (voteSignal)="userChangeVote($event)"></vote-counter>
   <div class="post-content">
     <h3>{{post.title}}</h3>
     <div *ngIf="!expanded">

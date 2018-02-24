@@ -2,5 +2,7 @@
   <div>
     <h3>Username: {{profile.userName}}</h3>
     <h3>E-mail: {{profile.email}}</h3>
+    <h3>Vote-History</h3>
+    <gen-tab [posts]="voteHistory" [profile]="profile"></gen-tab>
   </div>
 </div>
