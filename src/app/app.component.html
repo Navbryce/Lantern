@@ -1,8 +1,6 @@
 <navbar [selectedTabObject]="selectedTab" [profile]="profile"></navbar>
 <div class="tabs">
-  <rec-tab [ngClass]="{'tab-hide': selectedTab.tabNumber!=0}"></rec-tab>
-  <all-tab [ngClass]="{'tab-hide': selectedTab.tabNumber!=1}"></all-tab>
-  <p [ngClass]="{'tab-hide': selectedTab.tabNumber!=2}">aaaa</p>
-
-
+  <rec-tab [profile]="profile" [ngClass]="{'tab-hide': selectedTab.tabNumber!=0}"></rec-tab>
+  <all-tab [profile]="profile" [ngClass]="{'tab-hide': selectedTab.tabNumber!=1}"></all-tab>
+  <profile-tab [profile]="profile" [ngClass]="{'tab-hide': selectedTab.tabNumber!=2}"></profile-tab>
 </div>

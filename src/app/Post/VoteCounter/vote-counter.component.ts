@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'vote-counter',
@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./vote-counter.component.css']
 })
 export class VoteCounterComponent {
+  @Output() voteSignal = new EventEmitter<number>();
   @Input("upvotes") upVotes: number;
   @Input("downvotes") downVotes: number;
   userVote = 0;
@@ -23,8 +24,10 @@ export class VoteCounterComponent {
           this.downVotes += 1;
         }
         this.userVote = newVote;
+        this.voteSignal.next(newVote);
       } else { // If you are switching your vote to the same vote, then you are toggling your vote OFF aka setting status to 0
         this.userVote = 0;
+        this.voteSignal.next(0);
       }
   }
 

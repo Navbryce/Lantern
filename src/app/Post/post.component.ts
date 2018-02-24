@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Post } from '../Dependencies/post.class'
+import { Profile } from '../Dependencies/profile.class'
 
 @Component({
   selector: 'post-element',
@@ -8,6 +9,7 @@ import { Post } from '../Dependencies/post.class'
 })
 export class PostComponent {
   @Input() post: Post;
+  @Input() profile: Profile;
   expanded: boolean;
   expandText: string; // Opposite of text of status
 
@@ -26,4 +28,7 @@ export class PostComponent {
     return this.expanded;
   }
 
+  userChangeVote (newVote: number): void {
+    this.profile.voteOnPost(this.post, newVote);
+  }
 }

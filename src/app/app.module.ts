@@ -7,9 +7,7 @@ import { VoteCounterComponent } from './Post/VoteCounter/vote-counter.component'
 import { NavbarComponent } from './Navbar/navbar.component';
 import {RecommendedTabComponent} from './Tabs/RecommendedTab/recommended-tab.component'
 import {AllTabComponent} from './Tabs/AllTab/all-tab.component'
-
-
-
+import {ProfileTabComponent} from './Tabs/ProfileTab/profile-tab.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +16,8 @@ import {AllTabComponent} from './Tabs/AllTab/all-tab.component'
     VoteCounterComponent,
     NavbarComponent,
     RecommendedTabComponent,
-    AllTabComponent
+    AllTabComponent,
+    ProfileTabComponent
   ],
   imports: [
     BrowserModule

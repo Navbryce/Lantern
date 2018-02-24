@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Post } from '../../Dependencies/post.class'
+import { Profile } from '../../Dependencies/profile.class'
 
 @Component({
   selector: 'rec-tab',
@@ -7,6 +8,7 @@ import { Post } from '../../Dependencies/post.class'
   styleUrls: ['./recommended-tab.component.css']
 })
 export class RecommendedTabComponent {
+  @Input() profile: Profile;
   posts: Array<Post>;
 
   constructor () {

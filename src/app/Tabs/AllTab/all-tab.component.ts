@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Post } from '../../Dependencies/post.class'
+import { Profile } from '../../Dependencies/profile.class'
 
 @Component({
   selector: 'all-tab',
@@ -7,6 +8,8 @@ import { Post } from '../../Dependencies/post.class'
   styleUrls: ['./all-tab.component.css']
 })
 export class AllTabComponent {
+  @Input() profile: Profile;
+
   posts: Array<Post>;
 
   constructor () {

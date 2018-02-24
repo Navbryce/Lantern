@@ -18,6 +18,5 @@ export class NavbarComponent {
   selectTab (newTab) {
     this.selectedTabObject.tabNumber = newTab;
     this.selectedTab = newTab;
-    console.log(this.selectedTab)
   }
 }

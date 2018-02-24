@@ -20,7 +20,8 @@ export class AppComponent {
 
   generateProfile (): Profile {
     var interests = []
-    var profile = new Profile("Navbryce", interests);
+    var posthistory = []
+    var profile = new Profile("Navbryce", "navbarry@gmail.com", interests, {});
     return profile;
   }
 
