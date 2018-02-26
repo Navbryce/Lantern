@@ -21,7 +21,7 @@ export class Profile {
   voteOnPost(post, vote) {
     if (this.voteHistory[post.id] != null) { // It is already in the votehistory
       var shouldDelete = this.voteHistory[post.id].changeVote(vote);
-      if (shouldDelete == true) {
+      if (shouldDelete) {
         delete this.voteHistory[post.id]; // Removes from the vote history because the vote is 0
       }
       this.voteHistorySource.next(this.voteHistory); // Lets other classes know when the vote history changed
@@ -42,6 +42,7 @@ export class VoteHistoryElement {
   }
   changeVote (newVote: number): boolean { // Will return true if the vote was switched to 0. the element should be deleted if so
     this.vote = newVote;
+
     return newVote == 0
   }
 }

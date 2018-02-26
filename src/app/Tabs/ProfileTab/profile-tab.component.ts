@@ -10,10 +10,12 @@ import { Profile } from '../../Dependencies/profile.class'
 export class ProfileTabComponent {
   @Input() profile: Profile;
   voteHistory: Array<Post>; // The vote history array in profile is an array of javascript objects with a "post" property and "vote" property
+  addInterest: boolean;
 
   constructor () {
   }
   ngOnInit() {
+    this.addInterest = false;
     this.profile.voteHistoryObservable.subscribe((voteHistory) => {
       this.getVoteHistoryPosts(voteHistory);
     });
