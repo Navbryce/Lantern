@@ -14,6 +14,6 @@
   </div>
   <div class="add-interest" [ngClass]="{'hide': !addInterest}">
     <p>Add Interest</p>
-    <button>Ok</button><button (click)="addInterest = false">Cancel</button>
+    <add-category-input [filterCategories]="profile.interests" (categoryAddSignal)="addInterestToUser($event)" (cancelAddSignal)="closeAdd()"></add-category-input>
   </div>
 </div>

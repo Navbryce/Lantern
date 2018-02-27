@@ -13,9 +13,14 @@ export class Profile {
   constructor (userName, email, interests, voteHistory) {
     this.userName = userName;
     this.email = email;
-    this.interests = interests;
+    this.interests = interests.sort();
     this.voteHistory = voteHistory;
     this.voteHistorySource.next(voteHistory)
+  }
+
+  addInterest (interest: string) {
+    this.interests.push(interest);
+    this.interests = this.interests.sort(); // should be done with binary add. not enough time to implement
   }
 
   voteOnPost(post, vote) {

@@ -10,6 +10,7 @@
 }
 .nav {
   position: relative;
+  border-bottom: 1px solid rgb(200, 200, 200);
 }
 .nav-logo-wrapper {
   display: inline-block;
