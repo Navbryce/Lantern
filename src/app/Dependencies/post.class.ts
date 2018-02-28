@@ -1,11 +1,13 @@
 export class Post {
-  title: string;
-  id: number;
+  categories: Array<string>;
   description: string;
+  ID: number;
+  title: string;
   votes: any; //Javascript object with "up", "down", and "userVote" properties
-  constructor (titleValue, descriptionValue, initialUp, initialDown, initialVote) {
-    this.id = this.generateID();
+  constructor (titleValue: string, categories: Array<string>, descriptionValue: string, initialUp: number, initialDown: number, initialVote: number) {
+    this.ID = this.generateID();
     this.title = titleValue;
+    this.categories = categories;
     this.description = descriptionValue;
     this.votes = {
       up: initialUp,
@@ -14,7 +16,9 @@ export class Post {
     }
     this.changeUserVote(initialVote);
   }
-
+  addCategory (category: string): void {
+    this.categories.push(category);
+  }
   changeUserVote (newVote: number): number {  // Returns the "effective" user vote. 0 if they unvoted or NEVER VOTED
     if (this.votes.userVote == -1) { // this.votes.userVote is current vote
       this.votes.down -= 1;

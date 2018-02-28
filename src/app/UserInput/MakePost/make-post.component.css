@@ -1,10 +1,9 @@
-.make-post {
+add-category-input {
   background-color: rgb(180, 180, 180);
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 1;
-}
-.wrapper {
-  position: relative;
 }

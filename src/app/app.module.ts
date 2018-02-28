@@ -10,6 +10,7 @@ import {AllTabComponent} from './Tabs/AllTab/all-tab.component'
 import {ProfileTabComponent} from './Tabs/ProfileTab/profile-tab.component'
 import {GeneralTabComponent} from './Tabs/general-tab.component'
 import {AddCategoryComponent} from './UserInput/CategoryAdd/add-category.component'
+import {MakePostComponent} from './UserInput/MakePost/make-post.component'
 
 
 
@@ -23,7 +24,8 @@ import {AddCategoryComponent} from './UserInput/CategoryAdd/add-category.compone
     RecommendedTabComponent,
     AllTabComponent,
     ProfileTabComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    MakePostComponent
   ],
   imports: [
     BrowserModule,

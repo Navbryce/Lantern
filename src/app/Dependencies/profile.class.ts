@@ -2,9 +2,10 @@ import { Post } from './post.class'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 export class Profile {
 
-  userName: string;
   email: string;
+  ID: number;
   interests: Array<string>;
+  userName: string;
 
   voteHistory: any; // Properties should be the postID; Javascript object, not array because it would be filled with holes (not really a problmem but massive when printing in ocnosle)
   voteHistorySource = new BehaviorSubject<any>([]);
@@ -14,6 +15,7 @@ export class Profile {
     this.userName = userName;
     this.email = email;
     this.interests = interests.sort();
+    this.ID = this.generateID();
     this.voteHistory = voteHistory;
     this.voteHistorySource.next(voteHistory)
   }
@@ -24,17 +26,22 @@ export class Profile {
   }
 
   voteOnPost(post, vote) {
-    if (this.voteHistory[post.id] != null) { // It is already in the votehistory
-      var shouldDelete = this.voteHistory[post.id].changeVote(vote);
+    if (this.voteHistory[post.ID] != null) { // It is already in the votehistory
+      var shouldDelete = this.voteHistory[post.ID].changeVote(vote);
       if (shouldDelete) {
-        delete this.voteHistory[post.id]; // Removes from the vote history because the vote is 0
+        delete this.voteHistory[post.ID]; // Removes from the vote history because the vote is 0
       }
       this.voteHistorySource.next(this.voteHistory); // Lets other classes know when the vote history changed
     } else if (vote != 0) { // if the vote is not in the vote history and the vote is not zero
       var voteHistoryElement = new VoteHistoryElement(post, vote);
-      this.voteHistory[post.id] = voteHistoryElement;
+      this.voteHistory[post.ID] = voteHistoryElement;
       this.voteHistorySource.next(this.voteHistory); // Lets other classes know when the vote history changed
     }
+    console.log(this.voteHistory);
+
+  }
+  generateID (): number {
+    return Math.floor(1000000 * Math.random());
   }
 }
 

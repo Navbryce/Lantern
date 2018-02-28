@@ -28,7 +28,7 @@ export class ProfileTabComponent {
   closeAdd () { // Closes the add dialogue
     this.addInterest = false;
   }
-  getVoteHistoryPosts (newVoteHistory: any): void { // Required rather than just sending the profile.voteHistory variable to the "vote history" tab because profile.voteHistory is a javascript object where each property is has two properties (an ID and post)
+  getVoteHistoryPosts (newVoteHistory: any): void { // Required rather than just sending the profile.voteHistory variable to the "vote history" tab because profile.voteHistory is a javascript object where each property is has two properties (an ID and post
     var posts = [];
     Object.keys(newVoteHistory).forEach(function(key,index) {
       posts.push(newVoteHistory[key].post);

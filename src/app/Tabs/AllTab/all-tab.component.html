@@ -1,3 +1,11 @@
-<div *ngFor = "let postObject of posts" >
-  <post-element [profile]="profile" [post] = "postObject"></post-element>
+<div class="wrapper">
+  <div>
+    <button (click)="makingPost=true">Make Post</button>
+  </div>
+  <div *ngFor = "let postObject of posts" >
+    <post-element [profile]="profile" [post] = "postObject"></post-element>
+  </div>
+  <div *ngIf="makingPost" class="make-post">
+    <make-post-input [profileID]="profile.ID" [profileName]="profile.profileName" (cancelSignal)="closeMakePost()"></make-post-input>
+  </div>
 </div>
