@@ -2,6 +2,7 @@
   <vote-counter [votes] = "post.votes" (voteSignal)="userChangeVote($event)"></vote-counter>
   <div class="post-content">
     <h3>{{post.title}}</h3>
+    <h5>{{post.recommendFactor*100}}% Recommended</h5>
     <div *ngIf="!expanded">
       <p class="text-limit">{{post.description}}</p>
     </div>

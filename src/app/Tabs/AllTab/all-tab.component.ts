@@ -27,4 +27,10 @@ export class AllTabComponent { // Probably want to make this extend general tab
     posts.push(new Post("Title 1", [], "At the top", 5000, 122, 0));
     return posts;
   }
+
+  makePost (post: Post) { // User is trying to post the parameter
+    console.log(post);
+    this.posts.push(post);
+    this.closeMakePost(); // Close the make post
+  }
 }

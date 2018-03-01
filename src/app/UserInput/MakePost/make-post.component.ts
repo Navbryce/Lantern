@@ -3,6 +3,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { getBlacklistCategories } from '../../Dependencies/common-categories.function'
 import { getCommonCategories } from '../../Dependencies/common-categories.function'
 import { getStatesAndAbbreviations } from '../../Dependencies/locations-functions.function'
+import { Post } from '../../Dependencies/post.class'
 
 
 @Component({
@@ -13,7 +14,7 @@ import { getStatesAndAbbreviations } from '../../Dependencies/locations-function
 export class MakePostComponent {
   @Input() profileID: number; // Categories to filter out
   @Input() profileName: string;
-  @Output() createPostSignal = new EventEmitter<string>();
+  @Output() createPostSignal = new EventEmitter<any>();
   @Output() cancelSignal = new EventEmitter<boolean>();
   @ViewChild(NgForm) form;
 
@@ -39,6 +40,13 @@ export class MakePostComponent {
 
   closeAddCategory(): void { // Closes the "add category dialogue"
       this.addCategoryVis = false;
+  }
+
+  makePost(): void { // User clicked "make post"
+    if (this.form.valid) {
+      var post = new Post(this.title, this.categories, this.description, 0, 0, 0);
+      this.createPostSignal.next(post);
+    }
   }
 
   reset(): void {

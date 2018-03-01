@@ -6,6 +6,6 @@
     <post-element [profile]="profile" [post] = "postObject"></post-element>
   </div>
   <div *ngIf="makingPost" class="make-post">
-    <make-post-input [profileID]="profile.ID" [profileName]="profile.profileName" (cancelSignal)="closeMakePost()"></make-post-input>
+    <make-post-input [profileID]="profile.ID" [profileName]="profile.profileName" (cancelSignal)="closeMakePost()" (createPostSignal)="makePost($event)"></make-post-input>
   </div>
 </div>

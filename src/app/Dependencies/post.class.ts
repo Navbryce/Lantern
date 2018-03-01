@@ -4,6 +4,7 @@ export class Post {
   ID: number;
   title: string;
   votes: any; //Javascript object with "up", "down", and "userVote" properties
+  recommendFactor: number; // A number between 0 and 1 used to quantify how much Lantern recommends post.
   constructor (titleValue: string, categories: Array<string>, descriptionValue: string, initialUp: number, initialDown: number, initialVote: number) {
     this.ID = this.generateID();
     this.title = titleValue;
@@ -15,6 +16,7 @@ export class Post {
       userVote: initialVote
     }
     this.changeUserVote(initialVote);
+    this.recommendFactor = this.getRecommendFactor(0, .5); // Temporary. See method description. Will be added as a parameter for the constructor as well
   }
   addCategory (category: string): void {
     this.categories.push(category);
@@ -40,6 +42,12 @@ export class Post {
 
   generateID (): number {
     return Math.floor(1000000 * Math.random());
+  }
+
+  getRecommendFactor ( min: number, max: number): number { // currently done randomly because their until  ML/Graph Theory algorithims are implemented
+    var value = ((max-min) * Math.random()) + min;
+    value = Math.round(value * 100)/100; // Math.Round rounds to the nearest integer
+    return value;
   }
 }
 export class Comment { // Comments can be voted on
