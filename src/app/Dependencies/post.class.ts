@@ -16,7 +16,7 @@ export class Post {
       userVote: initialVote
     }
     this.changeUserVote(initialVote);
-    this.recommendFactor = this.getRecommendFactor(0, .5); // Temporary. See method description. Will be added as a parameter for the constructor as well
+    this.recommendFactor = this.getRecommendFactor(0, 1); // Temporary. See method description. Will be added as a parameter for the constructor as well
   }
   addCategory (category: string): void {
     this.categories.push(category);
@@ -47,7 +47,16 @@ export class Post {
   getRecommendFactor ( min: number, max: number): number { // currently done randomly because their until  ML/Graph Theory algorithims are implemented
     var value = ((max-min) * Math.random()) + min;
     value = Math.round(value * 100)/100; // Math.Round rounds to the nearest integer
+    var valueString = "" + value;
+    if (valueString.length > 4) { // Sometimes round return a number with more than two digits (probably because of the /100) (4 because 0.{{number}})
+      valueString = valueString.substring(0, 4); // First and second characters are "0.""
+      value = parseFloat(valueString);
+    }
     return value;
+  }
+
+  getVotesTotal (): number {
+    return this.votes.up - this.votes.down;
   }
 }
 export class Comment { // Comments can be voted on

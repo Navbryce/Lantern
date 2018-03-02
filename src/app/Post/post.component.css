@@ -11,15 +11,27 @@
   display: inline-block;
   width: 80%; /*Leave room for vote counter*/
 }
+.post-title {
+  display: inline-block;
+}
 .post-wrapper {
   border-bottom: 1px solid rgb(200, 200, 200);
   width: 100%;
 
+}
+.recommend-factor {
+  display: inline-block;
+  margin-left: 1%;
+}
+.text-green {
+  color: green;
 }
 .text-limit {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
+}
+.text-red {
+  color:red;
 }
