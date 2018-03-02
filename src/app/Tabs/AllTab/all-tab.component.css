@@ -1,9 +1,13 @@
 .make-post {
-  background-color: rgb(180, 180, 180);
+  background-color: white;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 1;
+}
+.tab-nav {
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .wrapper {
   position: relative;

@@ -12,9 +12,9 @@ export function sortPosts (posts: Array<Post>, startingIndex, endIndex): void { 
         swapInArray(posts, lastEmptyLowIndex, postCounter);
       }
     }
-    swapInArray(posts, 0, lastEmptyLowIndex); // Put pivot point in middle (the element at lastEmptyLowIndex is already below pivot, so putting it farther below shouldn't effect it)
+    swapInArray(posts, startingIndex, lastEmptyLowIndex); // Put pivot point in middle (the element at lastEmptyLowIndex is already below pivot, so putting it farther below shouldn't effect it)
 
-    sortPosts(posts, 0, lastEmptyLowIndex); // right before pivot point
+    sortPosts(posts, startingIndex, lastEmptyLowIndex); // right before pivot point
     sortPosts(posts, lastEmptyLowIndex + 1, endIndex);
   }
 }

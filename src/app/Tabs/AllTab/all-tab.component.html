@@ -1,6 +1,6 @@
 <div class="wrapper">
-  <div>
-    <button (click)="makingPost=true">Make Post</button>
+  <div class="tab-nav">
+    <button class="btn" (click)="makingPost=true"><i class="fa fa-pencil-square-o"></i>Make Post</button>
   </div>
   <div *ngFor = "let postObject of posts" >
     <post-element [profile]="profile" [post] = "postObject"></post-element>

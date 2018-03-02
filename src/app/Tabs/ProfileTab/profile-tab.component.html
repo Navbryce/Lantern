@@ -7,9 +7,11 @@
       <ul>
         <li *ngFor="let interest of profile.interests">{{interest}}</li>
       </ul>
-      <button (click)="addInterest = true">Add Interest</button>
+      <button class="btn" (click)="addInterest = true">Add Interest</button>
       <h3>Vote-History (Used for Recommendations):</h3>
-      <gen-tab [posts]="voteHistory" [profile]="profile"></gen-tab>
+      <div class="vote-history red-border">
+        <gen-tab [posts]="voteHistory" [profile]="profile"></gen-tab>
+      </div>
     </div>
   </div>
   <div class="add-interest" [ngClass]="{'hide': !addInterest}">

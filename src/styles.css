@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+button {
+  background-color: white;
+  border: 1px solid rgb(237, 154, 148) !important;
+  color: black;
+}
+button:hover {
+  background-color: rgb(237, 154, 148);
+  color: white;
+}
+button:focus {
+  box-shadow: none !important; /*Gets rid of the blue glow when the button is clicked*/
+}
+button::selection {
+  box-shadow: none !important; /*Gets rid of the blue glow when the button is clicked*/
+}
+.red-border {
+  border: 1px solid rgb(237, 154, 148);
+  border-radius: 5px;
+}

@@ -1,11 +1,15 @@
 add-category-input {
-  background-color: rgb(180, 180, 180);
+  background-color: white;
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 1;
+}
+form {
+  margin: 20px;
+  padding: 20px;
 }
 .inline {
   display: inline-block;

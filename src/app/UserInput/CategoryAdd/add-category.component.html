@@ -1,5 +1,5 @@
 <div>
-  <form>
+  <form class="red-border">
     <label>Select a category to add</label>
     <select [(ngModel)]="category" name="category" #categorySelect="ngModel" required>
       <option value="{{category}}" *ngFor="let category of categoriesToList">{{category}}</option>
@@ -13,6 +13,6 @@
         Cannot be empty. Please enter a category, select a common category from the drop down, or cancel.
       </div>
     </div>
-    <button (click)="addCategory()">Ok</button> <button (click)="cancel()">Cancel</button>
+    <button class="btn" (click)="addCategory()">Ok</button> <button class="btn" (click)="cancel()">Cancel</button>
   </form>
 </div>
