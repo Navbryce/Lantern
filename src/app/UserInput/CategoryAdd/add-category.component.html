@@ -1,15 +1,18 @@
 <div>
   <form class="red-border">
-    <label>Select a category to add</label>
-    <select [(ngModel)]="category" name="category" #categorySelect="ngModel" required>
-      <option value="{{category}}" *ngFor="let category of categoriesToList">{{category}}</option>
-    </select>
-    <div [hidden]="categorySelect.valid || categorySelect.pristine" class="alert alert-danger">
-      Please select a category or "other" or hit cancel.
+    <div class="row form-group">
+      <label class="col-form-label col-sm-2">Select a category to add</label>
+      <select class="col-sm-3" [(ngModel)]="category" name="category" #categorySelect="ngModel" required>
+        <option value="{{category}}" *ngFor="let category of categoriesToList">{{category}}</option>
+      </select>
+      <div [hidden]="categorySelect.valid || categorySelect.pristine" class="alert alert-danger">
+        Please select a category or "other" or hit cancel.
+      </div>
     </div>
-    <div *ngIf="category=='Other'">
-      <input [(ngModel)]="otherCategory" name="otherCategory" #otherCategoryInput="ngModel" required>
-      <div [hidden]="otherCategoryInput.valid || otherCategoryInput.pristine" class="alert alert-danger">
+    <div class="row form-group" *ngIf="category=='Other'">
+      <label class="col-form-label col-sm-2">Specify:</label>
+      <input class="col-sm-3"[(ngModel)]="otherCategory" name="otherCategory" #otherCategoryInput="ngModel" required>
+      <div class="alert alert-danger" [hidden]="otherCategoryInput.valid || otherCategoryInput.pristine" >
         Cannot be empty. Please enter a category, select a common category from the drop down, or cancel.
       </div>
     </div>

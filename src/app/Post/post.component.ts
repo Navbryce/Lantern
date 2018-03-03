@@ -18,6 +18,10 @@ export class PostComponent {
     this.expandText = this.getTextOfStatus(!this.expanded);
   }
 
+  factorToPercent (factor: number) {
+    return Math.round(factor * 100); // Math.round required because even multiplying a normal decimal by a 100 can cause float problems
+  }
+
   getTextOfStatus (status): string {
     return status ? "Expanded":"Minimize"
   }

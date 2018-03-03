@@ -48,6 +48,8 @@ export class Post {
     var value = ((max-min) * Math.random()) + min;
     value = Math.round(value * 100)/100; // Math.Round rounds to the nearest integer
     var valueString = "" + value;  // Sometimes Math.Round does not round to two digits because of the /100. Converting to string automatically rounds
+    valueString = valueString.substr(0, 4); // Because of commas
+    console.log(valueString)
     value = parseFloat(valueString);
 
     return value;

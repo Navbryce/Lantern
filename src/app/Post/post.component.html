@@ -2,7 +2,7 @@
   <vote-counter [votes] = "post.votes" (voteSignal)="userChangeVote($event)"></vote-counter>
   <div class="post-content">
     <h3 class="post-title">{{post.title}}</h3>
-    <h5 class="recommend-factor" [ngClass]="post.recommendFactor >= .5 ? 'text-green' : 'text-red'">{{post.recommendFactor*100}}% Recommended</h5>
+    <h5 class="recommend-factor" [ngClass]="post.recommendFactor >= .5 ? 'text-green' : 'text-red'">{{factorToPercent(post.recommendFactor)}}% Recommended</h5>
     <div *ngIf="!expanded">
       <p class="text-limit">{{post.description}}</p>
     </div>
